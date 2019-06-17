@@ -11,7 +11,7 @@ str(DF)
 #Continuous Variables:
 ## MPG,displacement,horsepower,weight,acceleration
 
-#Exploritory Analysis
+#Exploratory Analysis
 AutoDataContinuous=data.frame(DF$mpg,DF$displacement,DF$horsepower,DF$weight,DF$acceleration)
 head(AutoDataContinuous)
 ##Cor Matrix
