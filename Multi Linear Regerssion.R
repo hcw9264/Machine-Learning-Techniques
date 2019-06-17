@@ -2,7 +2,7 @@
 install.packages("ISLR")
 library("ISLR", lib.loc="/Library/Frameworks/R.framework/Versions/3.4/Resources/library")
 
-#Default file (flower dataset) as DF
+#Auto Dataset as DF
 DF=ISLR::Auto
 summary(DF)
 head(DF)
