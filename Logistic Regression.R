@@ -57,4 +57,10 @@ confusionMatrix(table(dfTrain$Response, dfTrain$defaultVal))
 confusionMatrix(table(dfTest$Response, dfTest$defaultVal))
 (55 + 3)/(1918+3+55+24) #Test Error/Misclassification Rate = 0.029
 
-
+# AUC
+library(ROCR)
+ROCRpred=prediction(as.numeric(dfTrain$Response),as.numeric(dfTrain$defaultVal)) 
+## When leveled, the values had turned to string, so converted them to num
+ROCRperf=performance(ROCRpred, 'tpr','fpr')
+plot(ROCRperf, colorize=TRUE,print.cutoffs.at=seq(0,1,0.2),text.adj=c(-0.3,2),xlab="1 - Specificity",ylab="Sensitivity") #this is just adding color
+## AUC plot looks off....
