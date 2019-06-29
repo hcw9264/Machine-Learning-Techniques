@@ -10,9 +10,9 @@ summary(df)
 # Split Data into Test and Train
 set.seed(100) #set.seed to random a number
 dfShuffle= df[sample(nrow(df)),]
-split = sample(x = nrow(df),size = 0.8*nrow(df)) # 20% Test, 80% Train
-dfTrain = df[split,]
-dfTest = df[-split,]
+split = sample(x = nrow(dfShuffle),size = 0.8*nrow(dfShuffle)) # 20% Test, 80% Train
+dfTrain = dfShuffle[split,]
+dfTest = dfShuffle[-split,]
 
 # Exploratory Analysis
 head(dfTrain)
